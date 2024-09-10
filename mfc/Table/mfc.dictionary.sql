@@ -1,5 +1,6 @@
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[mfc].[dictionary]') AND type in (N'U'))
-DROP TABLE mfc.dictionary GO
+DROP TABLE [mfc].[dictionary]
+GO
 
 CREATE TABLE mfc.dictionary
 (
