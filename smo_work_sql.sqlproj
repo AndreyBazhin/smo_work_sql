@@ -7,6 +7,13 @@
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
     <ModelCollation>1033, CI</ModelCollation>
   </PropertyGroup>
+  <ItemGroup>
+    <Build Remove="mfc\Таблицы\**" />
+    <Build Remove="registr.vw_registr.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Remove="registr\Таблицы\**" />
+  </ItemGroup>
   <Target Name="BeforeBuild">
     <Delete Files="$(BaseIntermediateOutputPath)\project.assets.json" />
   </Target>
