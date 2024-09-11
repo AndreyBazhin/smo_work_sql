@@ -1,0 +1,6 @@
+﻿CREATE VIEW dict.vw_f008
+AS
+SELECT
+  *
+FROM vrschet.DICT.F008
+GO
