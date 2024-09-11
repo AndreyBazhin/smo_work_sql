@@ -1,5 +1,3 @@
-USE smo_work;
-
 CREATE SCHEMA config;
 CREATE SCHEMA registr;
 CREATE SCHEMA report;
@@ -9,3 +7,5 @@ CREATE SCHEMA econom;
 CREATE SCHEMA office;
 CREATE SCHEMA expert;
 CREATE SCHEMA dict;
+
+CREATE SCHEMA schet;
