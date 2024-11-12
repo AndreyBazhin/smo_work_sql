@@ -1,4 +1,0 @@
-﻿CREATE VIEW dict.vw_mkb10
-AS
-SELECT *
-FROM vrschet.DICT.St_MKB
