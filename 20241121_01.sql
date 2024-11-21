@@ -122,7 +122,8 @@ OUTER APPLY (
     CAST(SUM(ISNULL(mee.Shtraf, 0)) AS NUMERIC(15,2)) AS shtraf_sum,
     SUM(IIF(mee.KodPrichOtkazFD IS NOT NULL, 1, 0)) AS vyvod
   FROM schet.vw_mee mee
-  JOIN schet.vw_sluch_base vsb ON mee.idcase = vsb.idcase
+--  JOIN schet.vw_sluch_base vsb ON mee.idcase = vsb.idcase
+  OUTER APPLY(SELECT * FROM schet.vw_sluch_base sb WHERE mee.idcase = sb.idcase) vsb
   OUTER APPLY (
     SELECT TOP 1 *
     FROM schet.vw_mek m
@@ -145,7 +146,8 @@ OUTER APPLY (
     CAST(SUM(ISNULL(ekmp.Shtraf, 0)) AS NUMERIC(15,2)) AS shtraf_sum,
     SUM(IIF(ekmp.KodPrichOtkazFD IS NOT NULL, 1, 0)) AS vyvod
   FROM schet.vw_ekmp ekmp
-  JOIN schet.vw_sluch_base vsb ON ekmp.idcase = vsb.idcase
+--  JOIN schet.vw_sluch_base vsb ON ekmp.idcase = vsb.idcase
+  OUTER APPLY(SELECT * FROM schet.vw_sluch_base sb WHERE ekmp.idcase = sb.idcase) vsb
   OUTER APPLY (
     SELECT TOP 1 *
     FROM schet.vw_mek m
